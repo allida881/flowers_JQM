@@ -1,0 +1,45 @@
+
+<div data-role="page" ng-controller="mainCtr">
+    <div data-role="header">
+        <a href="#" data-icon="back" data-rel="back" data-iconpos="notext" >返回</a>
+        <h2>请选花</h2>
+    </div>
+    <div data-role="content">
+        <label for="search">
+            <input type="search" id="search" placeholder="搜索鲜花名称或花语关键字..." ng-model="kw"/>
+        </label>
+        <ul data-role="listview" data-inset="true" id="flower">
+            <li ng-repeat="dish in dishList">
+                 <a href="" ng-click="showDetail(dish.did)" >
+                     <img  ng-src="../img/{{dish.img_sm}}" alt="" />
+                     <h4>{{dish.name}}</h4>
+                     <p>{{dish.material}}</p>
+                     <div class="price">{{dish.price | currency : '￥'}}</div>
+                </a>
+            </li>
+        </ul>
+        <!-- 加载更多按钮-->
+        <button  ng-click="loadMore()" ng-show="hasMore" >加载更多</button>
+        <div  ng-hide="hasMore" >
+            <span data-icon="alert"></span>
+            没有更多数据可供加载了！
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+             <ul>
+                 <li>
+                     <a href="#" data-icon="home">主页</a>
+                 </li>
+                 <li>
+                     <a href="myorder.html" data-icon="user">用户中心</a>
+                 </li>
+                 <li>
+                     <a href="start.html" data-icon="star">起始页</a>
+                 </li>
+             </ul>
+        </div>
+    </div>
+
+</div>
+

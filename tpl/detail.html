@@ -1,0 +1,39 @@
+<div data-role="page" ng-controller="detailCtr">
+    <div data-role="header">
+        <a href="#" data-icon="back" data-rel="back" data-iconpos="notext" >返回</a>
+        <h2>详情</h2>
+    </div>
+    <div data-role="content">
+        <div class="ui-body ui-body-a ui-corner-all" >
+            <h3>{{dish.name}}</h3>
+            <img ng-src="../img/{{dish.img_lg}}" >
+            <p >{{dish.material}}</p>
+            <p>{{dish.detail}}</p>
+            <div class="price">{{dish.price | currency:'￥'}}</div>
+        </div>
+
+        <div class=" ui-content">
+             <button ng-click="jump('order.html')" data-inline="true">我要订花</button>
+             <button data-inline="true" ng-click="jump('main.html')">我再看看</button>
+
+
+        </div>
+    </div>
+    <br/><br/><br/>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li>
+                    <a href="main.html" data-icon="home">主页</a>
+                </li>
+                <li>
+                    <a href="myorder.html" data-icon="user">用户中心</a>
+                </li>
+                <li>
+                    <a href="start.html" data-icon="star">起始页</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

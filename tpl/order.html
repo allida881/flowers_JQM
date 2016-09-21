@@ -1,0 +1,55 @@
+
+<div data-role="page" ng-controller="orderCtr">
+    <div data-role="header">
+        <a href="#" data-icon="back" data-rel="back" data-iconpos="notext" >返回</a>
+        <h2>收花人信息</h2>
+    </div>
+    <div data-role="content">
+        <form  ng-hide="succMsg || errMsg">
+            <div data-role="fieldcontain">
+                <label for="user_name">联系人：</label>
+                <input type="text" id="user_name" ng-model="order.name"/>
+            </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" >
+                    <legend>性别：</legend>
+                    <label for="mail">先生</label>
+                    <input type="radio" id="mail" name="gender" value="1" ng-model="order.sex"/>
+                    <label for="femail">女士</label>
+                    <input type="radio" id="femail" name="gender" value="2" ng-model="order.sex"/>
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain">
+                <label for="phone">联系电话:</label>
+                <input type="text" id="phone" ng-model="order.phone"/>
+            </div>
+            <div data-role="fieldcontain">
+                <label for="address">地址:</label>
+                <!--<input type="text" id="addr"  ng-model="order.addr"/>-->
+                <textarea name="address" id="address" cols="30" rows="10" ng-model="order.address"></textarea>
+            </div>
+            <div data-role="fieldcontain">
+                <button ng-click="submitOrder()" >提交订单</button>
+            </div>
+        </form>
+        <div ng-show="errMsg">{{errMsg}}</div>
+        <div  ng-show="succMsg">{{succMsg}}</div>
+    </div>
+    <br/><br/><br/>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li>
+                    <a href="main.html" data-icon="home">主页</a>
+                </li>
+                <li>
+                    <a href="myorder.html" data-icon="user">用户中心</a>
+                </li>
+                <li>
+                    <a href="start.html" data-icon="star">起始页</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

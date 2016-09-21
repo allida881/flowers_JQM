@@ -1,0 +1,46 @@
+
+<div data-role="page" ng-controller="myorderCtr">
+    <div data-role="header">
+        <a href="#" data-icon="back" data-rel="back" data-iconpos="notext" >返回</a>
+        <h2>我的订单</h2>
+    </div>
+    <div data-role="ui-content">
+        <table   data-role="table" data-mode="columntoggle " class="order-table">
+            <thead>
+                <tr>
+                    <th class="text-center">编号</th>
+                    <th class="text-center">鲜花花材</th>
+                    <th class="text-center">下单时间</th>
+                    <th class="text-center">联系人</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="o in orderList">
+                    <td>{{o.oid}}</td>
+                    <td>
+                        <a href="" ng-click="showDetail(o.did)">
+                            <img ng-src="../img/{{o.img_sm}}"/>
+                        </a>
+                    </td>
+                    <td>{{o.order_time| date :'yyyy-MM-dd HH:mm'}}</td>
+                    <td>{{o.user_name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li>
+                    <a href="main.html" data-icon="home">主页</a>
+                </li>
+                <li>
+                    <a href="myorder.html" data-icon="user">用户中心</a>
+                </li>
+                <li>
+                    <a href="start.html" data-icon="star">起始页</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
